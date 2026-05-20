@@ -598,7 +598,6 @@
             font-weight: 300;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero {
                 flex-direction: column;
@@ -627,7 +626,6 @@
 </head>
 <body>
 
-    <!-- Navigation Header -->
     <header>
         <div class="nav-left">
             <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
@@ -640,11 +638,9 @@
         </div>
 
         <nav id="nav-links" class="nav-right">
-            <!-- Dynamically updated via JS -->
         </nav>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-left">
             <div class="kicker-badge">
@@ -670,9 +666,7 @@
         </div>
     </section>
 
-    <!-- Main -->
     <main>
-        <!-- Feed -->
         <div class="feed-col">
             <div class="feed-top">
                 <span class="feed-label">Public Guest Feed</span>
@@ -687,7 +681,6 @@
             </div>
         </div>
 
-        <!-- Form -->
         <div class="form-col">
             <div class="form-top-accent"></div>
             <div class="form-head-title">Post a guest todo</div>
@@ -721,20 +714,15 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <span class="fc">© 2026 TodoFlow MVP</span>
-        <span class="ft">Built with FastAPI &amp; Vanilla JS</span>
+        <span class="fc">© 2026 MYTODO MVP</span>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/api.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/guest.js"></script>
 
-    <!-- Nav + helper renderer -->
     <script>
-        // Dynamic nav based on auth state
         const nav = document.getElementById('nav-links');
         const token = localStorage.getItem('access_token');
         if (token) {
@@ -749,7 +737,6 @@
             `;
         }
 
-        // Helper: render a single guest todo row into #guest-todo-list
         window.renderGuestTodoRow = function(todo) {
             const list = document.getElementById('guest-todo-list');
             if (list.querySelector('.todo-loading')) list.innerHTML = '';
@@ -774,7 +761,6 @@
             if (pill) pill.textContent = count + ' todo' + (count !== 1 ? 's' : '');
         };
 
-        // Helper: show empty state
         window.renderGuestEmpty = function() {
             const list = document.getElementById('guest-todo-list');
             list.innerHTML = `
